@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class DeleteRoad : MonoBehaviour
+namespace Gameplay.Road
 {
-    private void OnTriggerEnter(Collider other)
+    public class DeleteRoad : MonoBehaviour
     {
-        if (other.tag == "RoadEnd")
+        private void OnTriggerEnter(Collider other)
         {
-            Destroy(other.transform.parent.gameObject);
+            if (other.tag == "RoadEnd")
+            {
+                Destroy(other.transform.parent.gameObject);
+            }
         }
     }
 }

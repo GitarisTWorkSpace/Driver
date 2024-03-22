@@ -1,15 +1,19 @@
 using UnityEngine;
 
-public class SpawnRoad : MonoBehaviour
+namespace Gameplay.Road
 {
-    [SerializeField] private GameObject _roadPrefab;
-    [SerializeField] private Vector3 _position;
-
-    private void OnTriggerEnter(Collider other)
+    public class SpawnRoad : MonoBehaviour
     {
-        if (other.tag == "RoadEnd")
+        [SerializeField] private GameObject _roadPrefab;
+        [SerializeField] private Vector3 _position;
+
+        private void OnTriggerEnter(Collider other)
         {
-            Instantiate(_roadPrefab, _position, Quaternion.identity);
+            if (other.tag == "RoadEnd")
+            {
+                Instantiate(_roadPrefab, _position, Quaternion.identity);
+            }
         }
     }
 }
+
