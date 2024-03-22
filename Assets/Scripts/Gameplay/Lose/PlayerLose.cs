@@ -44,6 +44,7 @@ public class PlayerLose : MonoBehaviour
     private void ActivateLosePanel()
     {
         CheckBestScore();
+        Cursor.lockState = CursorLockMode.None;   
         _gamePanel.SetActive(false);
         _losePanel.SetActive(true);
         _bestScore.text = _playerData.BestScore.ToString();
