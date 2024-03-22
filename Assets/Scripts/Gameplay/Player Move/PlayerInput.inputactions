@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Paused",
+                    "type": "Button",
+                    "id": "21027e67-d213-4a76-a8dd-801541896703",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -48,6 +57,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "fa67269c-6a21-4da9-9bab-d839c867ed10",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Paused",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
