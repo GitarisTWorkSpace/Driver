@@ -4,11 +4,12 @@ namespace Gameplay.Road
 { 
     public class MoveRoad : MonoBehaviour
     {
-        [SerializeField] private float _moveSpeed;
+        public float MoveSpeed { get; set; }
 
         private void RoadMove()
         {
-            float scaledMoveSpeed = _moveSpeed * Time.deltaTime;
+            if (MoveSpeed == 0f) MoveSpeed = 15f;
+            float scaledMoveSpeed = MoveSpeed * Time.deltaTime;
             Vector3 offset = new Vector3(0f, 0f, -1f) * scaledMoveSpeed;
             transform.Translate(offset);
         }

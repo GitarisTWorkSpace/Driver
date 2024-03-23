@@ -8,6 +8,7 @@ namespace Settings.Pause
     public class PauseController : MonoBehaviour
     {
         [SerializeField] private GameObject _pausePanel;
+        [SerializeField] private GameObject _settingsPanel;
         [SerializeField] private AudioMixerGroup _soundMixer;
 
         private PlayerInput _playerInput;
@@ -18,6 +19,7 @@ namespace Settings.Pause
         {
             Cursor.lockState = CursorLockMode.Locked;
             _pausePanel.SetActive(false);
+            _settingsPanel.SetActive(false);
             Time.timeScale = 1;
             _isPlaying = true;
             if (PlayerPrefs.HasKey("SoundVolume"))
