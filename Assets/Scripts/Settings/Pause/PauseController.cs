@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,7 @@ namespace Settings.Pause
     public class PauseController : MonoBehaviour
     {
         [SerializeField] private GameObject _pausePanel;
+        [SerializeField] private AudioMixerGroup _soundMixer;
 
         private PlayerInput _playerInput;
 
@@ -18,6 +20,8 @@ namespace Settings.Pause
             _pausePanel.SetActive(false);
             Time.timeScale = 1;
             _isPlaying = true;
+            if (PlayerPrefs.HasKey("SoundVolume"))
+                _soundMixer.audioMixer.SetFloat("SoundVolume", PlayerPrefs.GetFloat("SoundVolume"));
         }
 
         public void InMenuButton()
@@ -50,6 +54,7 @@ namespace Settings.Pause
                 _pausePanel.SetActive(true);
                 Time.timeScale = 0;
                 _isPlaying = false;
+                _soundMixer.audioMixer.SetFloat("SoundVolume", -80f);
             } 
             else
                 UnPaused();

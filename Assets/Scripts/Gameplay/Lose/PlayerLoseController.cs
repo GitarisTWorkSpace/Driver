@@ -10,14 +10,18 @@ public class PlayerLoseController : MonoBehaviour
 
     [SerializeField] private PlayerData _playerData;
     [SerializeField] private ScoreController _scoreController;
-    [SerializeField] private PlayerLoseView _playerLoseView;
+
+    [SerializeField] private AudioSource _engineAuidoSource;
+    [SerializeField] private AudioSource _crashAudioSource;
 
     private PlayerInput _playerInput;
 
     public void PlayerLose()
     {
         CheckBestScore();
-        _playerLoseView.ActivateLosePanel();
+        PlayerLost?.Invoke();
+        _engineAuidoSource.Stop();
+        _crashAudioSource.Play();
     }
 
     private void Awake()
