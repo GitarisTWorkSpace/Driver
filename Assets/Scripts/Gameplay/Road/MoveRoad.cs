@@ -6,9 +6,23 @@ namespace Gameplay.Road
     {
         public float MoveSpeed { get; set; }
 
+        private void OnEnable()
+        {
+            ComplicationOverTime.RoadSpeedChaged += SpeedChaged;
+        }
+
+        private void OnDisable()
+        {
+            ComplicationOverTime.RoadSpeedChaged -= SpeedChaged;
+        }
+
+        private void SpeedChaged(int value)
+        {
+            MoveSpeed = value;
+        }
+
         private void RoadMove()
         {
-            if (MoveSpeed == 0f) MoveSpeed = 15f;
             float scaledMoveSpeed = MoveSpeed * Time.deltaTime;
             Vector3 offset = new Vector3(0f, 0f, -1f) * scaledMoveSpeed;
             transform.Translate(offset);
@@ -18,8 +32,6 @@ namespace Gameplay.Road
         {
             RoadMove();
         }
-
-
     }
 }
 

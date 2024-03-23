@@ -12250,7 +12250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pausePanel: {fileID: 1967078140}
-  _settingsPanel: {fileID: 0}
+  _settingsPanel: {fileID: 1681467807}
   _soundMixer: {fileID: 3833534352871164360, guid: 11c5f1563c5fb434b81f478f86e8d297, type: 2}
 --- !u!4 &2143464831
 Transform:
@@ -12339,6 +12339,10 @@ PrefabInstance:
       propertyPath: _playerLoseView
       value: 
       objectReference: {fileID: 1002543622}
+    - target: {fileID: 4691156827326962344, guid: 2934527badb02624f9abeca4d3c76971, type: 3}
+      propertyPath: _timeToAddScore
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7623882904524481505, guid: 2934527badb02624f9abeca4d3c76971, type: 3}
       propertyPath: m_RootOrder
       value: 17
