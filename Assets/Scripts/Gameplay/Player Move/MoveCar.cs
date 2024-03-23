@@ -36,7 +36,7 @@ namespace Gameplay.PlayerMove
             if (_moveDirection.sqrMagnitude < 0.1f) return;
 
             float scaledMoveSpeed = _moveSpeed * Time.deltaTime;
-            Vector3 offset = new Vector3(_moveDirection.x, 0f, 0f) * scaledMoveSpeed;
+            Vector3 offset = new Vector3(-_moveDirection.x, 0f, 0f) * scaledMoveSpeed;
             transform.Translate(offset);
         }
 

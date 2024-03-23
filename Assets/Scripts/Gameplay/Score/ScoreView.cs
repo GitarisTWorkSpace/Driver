@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -17,6 +16,12 @@ namespace Gameplay.Score
         {
             ScoreController.CoinAdd += CoinView;
             ScoreController.ScoreAdd += CurrentScoreView;
+        }
+
+        private void OnDisable()
+        {
+            ScoreController.CoinAdd -= CoinView;
+            ScoreController.ScoreAdd -= CurrentScoreView;
         }
 
         private void CoinView()

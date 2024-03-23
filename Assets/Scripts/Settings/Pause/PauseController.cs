@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace Settings.Pause
 {
@@ -9,7 +10,20 @@ namespace Settings.Pause
 
         private PlayerInput _playerInput;
 
-        [SerializeField] private bool _isPlaying = true;
+        private bool _isPlaying = true;
+
+        public void UnPaused()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            _pausePanel.SetActive(false);
+            Time.timeScale = 1;
+            _isPlaying = true;
+        }
+
+        public void InMenuButton()
+        {
+            SceneManager.LoadScene("Menu");
+        }
 
         private void Awake()
         {
@@ -40,15 +54,7 @@ namespace Settings.Pause
             else
                 UnPaused();
 
-        }
-
-        public void UnPaused()
-        {
-            Cursor.lockState = CursorLockMode.Locked; 
-            _pausePanel.SetActive(false);
-            Time.timeScale = 1;
-            _isPlaying = true;
-        }
+        }        
     }
 }
 

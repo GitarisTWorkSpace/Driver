@@ -27,8 +27,9 @@ namespace Menu.Loader
             if (_needOffLoadPanel)
             {
                 _loadPanelAnimator.SetBool("NeedOffLoadPanel", true);
-                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.lockState = CursorLockMode.Locked;                
             }
+            Time.timeScale = 1f;
         }
     }
 }

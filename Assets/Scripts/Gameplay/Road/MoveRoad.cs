@@ -5,12 +5,11 @@ namespace Gameplay.Road
     public class MoveRoad : MonoBehaviour
     {
         [SerializeField] private float _moveSpeed;
-        [SerializeField] private float _moveDirection;
 
         private void RoadMove()
         {
             float scaledMoveSpeed = _moveSpeed * Time.deltaTime;
-            Vector3 offset = new Vector3(0f, 0f, _moveDirection) * scaledMoveSpeed;
+            Vector3 offset = new Vector3(0f, 0f, -1f) * scaledMoveSpeed;
             transform.Translate(offset);
         }
 
