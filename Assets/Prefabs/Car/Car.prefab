@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced14b9ba6e285b42a315d0300c75314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToAddScore: 1
+  _timeToAddScore: 0.2
   _playerData: {fileID: 11400000, guid: b89dd07883f93624b83360c9ad678fc7, type: 2}
 --- !u!114 &4490635667729738401
 MonoBehaviour:
